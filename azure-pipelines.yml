@@ -1,16 +1,17 @@
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-16.04
 trigger:
   - master
 steps:
   - task: Npm@1
     inputs:
       command: 'custom'
+      customcommand: 'install --production'
   - script: |
       npm install
       npm run build
       npm test
-    displayName: 'run unit tests'
+    displayName: 'Run unit tests'
     continueOnError: true
   - task: PublishTestResults@2
     displayName: 'Publish Test Results'
