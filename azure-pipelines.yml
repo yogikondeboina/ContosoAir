@@ -8,6 +8,7 @@ steps:
       command: 'custom'
   - script: |
       npm install
+      npm run build
       npm test
     displayName: 'run unit tests'
     continueOnError: true
