@@ -5,7 +5,7 @@ trigger:
 steps:
   - task: Npm@1
     inputs:
-      command: 'ci'
+      command: 'custom'
   - script: |
       npm install
       npm test
